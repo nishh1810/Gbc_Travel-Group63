@@ -33,7 +33,8 @@ namespace Gbc_Travel_Group63.Migrations
                 name: "Flights",
                 columns: table => new
                 {
-                    FlightNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FlightNumber = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     DepartureCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ArrivalCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DepartureDate = table.Column<DateTime>(type: "datetime2", nullable: false),

@@ -4,68 +4,74 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Hotels</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HotelId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HotelName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StarRating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PricePerNight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPetFriendly)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RoomType)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HotelId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HotelName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StarRating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PricePerNight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPetFriendly)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoomType)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StarRating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PricePerNight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsPetFriendly)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoomType)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StarRating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PricePerNight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsPetFriendly)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomType)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.HotelId" class="btn btn-info">Edit</a> <!-- Link to view project details -->
+                        <a asp-action="" asp-route-id="@item.HotelId" class="btn btn-danger">Details</a> <!-- Link to delete a project -->
+                        <a asp-controller="Delete" asp-route-Id="@item.HotelId" class="btn btn-warning">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
-    </tbody>
-</table>
+else
+{
+    <p>No Hotels Available</p>
+}
+<p><a class=" btn btn-primary nav-link text-black" asp-area="" asp-controller="Hotels" asp-action="Create">Add a Property</a></p>

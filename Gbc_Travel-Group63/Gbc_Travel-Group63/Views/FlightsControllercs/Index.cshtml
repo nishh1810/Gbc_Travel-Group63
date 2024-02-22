@@ -4,80 +4,86 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Flights</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DepartureCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ArrivalCity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DepartureDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DepartureTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ArrivalTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberOfPassengers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalSeats)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivalCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivalTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfPassengers)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalSeats)
-            </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FlightNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartureCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ArrivalCity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartureDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DepartureTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ArrivalTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberOfPassengers)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalSeats)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                       @item.FlightNumber
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartureCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivalCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartureDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartureTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivalTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfPassengers)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalSeats)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.FlightNumber" class="btn btn-info">Edit</a> <!-- Link to view project details -->
+                        <a asp-action="" asp-route-id="@item.FlightNumber" class="btn btn-danger">Details</a> <!-- Link to delete a project -->
+                        <a asp-action="Delete" asp-route-Id="@item.FlightNumber" class="btn btn-warning">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
-    </tbody>
-</table>
+else
+{
+    <p>No Flights available.</p>
+}
+<p><a class=" btn btn-primary nav-link text-black" asp-area="" asp-controller="FlightsControllercs" asp-action="Create">Add a Flight</a></p>

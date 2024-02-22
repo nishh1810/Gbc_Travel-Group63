@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gbc_Travel_Group63.Models
 {
     public class Flights
     {
         [Key]
-        public string FlightNumber { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int FlightNumber { get; set; }
         public string DepartureCity { get; set; }
         public string ArrivalCity { get; set; }
         [DataType(DataType.Date)]
@@ -15,7 +17,7 @@ namespace Gbc_Travel_Group63.Models
         [DataType(DataType.Time)]
         public DateTime ArrivalTime { get; set; }
         public int? NumberOfPassengers { get; set; } // Nullable integer
-        public int TotalSeats { get; } = 450; // Static total seats
+        public int TotalSeats { get;  } = 450; 
         public decimal Price { get; set; } // Add the Price property
     }
 }
