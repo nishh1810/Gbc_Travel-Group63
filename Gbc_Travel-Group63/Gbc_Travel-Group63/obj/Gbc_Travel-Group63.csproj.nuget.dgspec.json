@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj": {}
+    "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj": {
+    "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj",
+        "projectUniqueName": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj",
         "projectName": "Gbc_Travel-Group63",
-        "projectPath": "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj",
-        "packagesPath": "C:\\Users\\nishi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\obj\\",
+        "projectPath": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj",
+        "packagesPath": "/Users/leonidserebryannikov/.nuget/packages/",
+        "outputPath": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\nishi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/leonidserebryannikov/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,6 +47,10 @@
               "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.2, )"
             },
@@ -87,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
