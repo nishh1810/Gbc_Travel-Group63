@@ -12,9 +12,27 @@ namespace Gbc_Travel_Group63.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult Index(string? sortDirection)
         {
-            return View(_db.Hotels.ToList());
+            var hotels = _db.Hotels.AsQueryable();
+
+            switch (sortDirection)
+            {
+                case "low_to_high":
+                    hotels = hotels.OrderBy(h => h.PricePerNight);
+                    break;
+                case "high_to_low":
+                    hotels = hotels.OrderByDescending(h => h.PricePerNight);
+                    break;
+                
+
+                default:
+                    
+                    hotels = hotels.OrderBy(h => h.PricePerNight);
+                    break;
+            }
+
+            return View(hotels.ToList());
         }
         public IActionResult Create()
         {
@@ -105,5 +123,30 @@ namespace Gbc_Travel_Group63.Controllers
             // Handle the case where the project might not be found
             return NotFound();
         }
+        [HttpGet("SearchHotels")]
+        public async Task<IActionResult> SearchH(string location, string roomType)
+        {
+            var hotelsQuery = from h in _db.Hotels select h;
+            bool searchPerformed = !string.IsNullOrEmpty(location) || !string.IsNullOrEmpty(roomType);
+
+            if (searchPerformed)
+            {
+                if (!string.IsNullOrEmpty(location))
+                {
+                    hotelsQuery = hotelsQuery.Where(h => h.Location.Contains(location));
+                }
+
+                if (!string.IsNullOrEmpty(roomType))
+                {
+                    hotelsQuery = hotelsQuery.Where(h => h.RoomType.Contains(roomType));
+                }
+            }
+
+            var matchingHotels = await hotelsQuery.ToListAsync();
+
+            ViewData["SearchPerformed"] = searchPerformed;
+            return View("SearchH", matchingHotels);
+        }
+
     }
 }

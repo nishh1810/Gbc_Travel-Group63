@@ -35,5 +35,30 @@ namespace Gbc_Travel_Group63.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [HttpGet]
+        public IActionResult GeneralSearch(string searchType)
+        {
+            if (searchType == "Hotels")
+            {
+               
+                return RedirectToAction("HotelForm", "Home");
+            }
+            else if (searchType == "Flights")
+            {
+                
+                return RedirectToAction("FlightForm", "Home");
+            } 
+            else if (searchType == "Cars")
+            {
+                
+                return RedirectToAction("CarForm", "Home");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpGet]
+        public IActionResult FlightForm() { return View(); }
+        public IActionResult CarForm() { return View(); }
+        public IActionResult HotelForm() { return View(); }
     }
 }

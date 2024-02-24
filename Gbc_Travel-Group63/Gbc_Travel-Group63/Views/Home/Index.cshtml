@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Guru</title>
+    
     <style>
         /* Add your styling here */
 
@@ -91,12 +92,26 @@
     </style>
 </head>
     <body>
-
+        <p class="justify-content-center">Get whole list of available options</p>
         <nav>
             <a asp-area="" asp-controller="FlightsControllercs" asp-action="Index">Flights</a>
             <a asp-area="" asp-controller="Hotels" asp-action="Index">Hotels</a>
             <a asp-area="" asp-controller="Car" asp-action="Index">Cars</a>
         </nav>
+        <div class="container">
+            <p>Get Personalised Options</p>
+            <form class="d-flex" asp-controller="Home" asp-action="GeneralSearch" method="get">
+                <input class="form-control" type="text" placeholder="Search" name="searchString" />
+                <select class="form-control btn btn-secondary dropdown-toggle" name="searchType">
+                    <option value="Hotels">Hotels</option>
+                    <option value="Flights">Flights</option>
+                    <option value="Cars">Cars</option>
+                </select>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        
+        
     </body>
 </html>
 

@@ -1,10 +1,13 @@
 ﻿using Gbc_Travel_Group63.Data;
 using Gbc_Travel_Group63.Models;
+using Microsoft.AspNetCore.Components.QuickGrid;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gbc_Travel_Group63.Controllers
 {
+    
+
     public class CarController : Controller
     {
         public readonly ApplicationDbContext _db;
@@ -12,9 +15,27 @@ namespace Gbc_Travel_Group63.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult Index(string? sortDirection)
         {
-            return View(_db.Cars.ToList());
+            var cars = _db.Cars.AsQueryable();
+
+            switch (sortDirection)
+            {
+                case "low_to_high":
+                    cars = cars.OrderBy(c => c.PricePerDay);
+                    break;
+                case "high_to_low":
+                    cars = cars.OrderByDescending(c => c.PricePerDay);
+                    break;
+                // Add more cases if needed for other sorting options
+
+                default:
+                    // Default sorting, you can change this as per your requirement
+                    cars = cars.OrderBy(c => c.PricePerDay);
+                    break;
+            }
+
+            return View(cars.ToList());
         }
         public IActionResult Create()
         {
@@ -105,5 +126,30 @@ namespace Gbc_Travel_Group63.Controllers
             // Handle the case where the project might not be found
             return NotFound();
         }
+        [HttpGet("SearchCars")]
+        public async Task<IActionResult> SearchC(string location, string brand)
+        {
+            var carsQuery = from c in _db.Cars select c;
+            bool searchPerformed = !string.IsNullOrEmpty(location) || !string.IsNullOrEmpty(brand);
+
+            if (searchPerformed)
+            {
+                if (!string.IsNullOrEmpty(location))
+                {
+                    carsQuery = carsQuery.Where(c => c.City.Contains(location));
+                }
+
+                if (!string.IsNullOrEmpty(brand))
+                {
+                    carsQuery = carsQuery.Where(c => c.CarBrand.Contains(brand));
+                }
+            }
+
+            var matchingCars = await carsQuery.ToListAsync();
+
+            ViewData["SearchPerformed"] = searchPerformed;
+            return View("SearchC", matchingCars);
+        }
+
     }
 }

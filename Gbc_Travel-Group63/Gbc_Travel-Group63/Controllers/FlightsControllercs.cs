@@ -12,9 +12,27 @@ namespace Gbc_Travel_Group63.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult Index(string? sortDirection)
         {
-            return View(_db.Flights.ToList());
+            var flights = _db.Flights.AsQueryable();
+
+            switch (sortDirection)
+            {
+                case "low_to_high":
+                    flights = flights.OrderBy(f => f.Price);
+                    break;
+                case "high_to_low":
+                    flights = flights.OrderByDescending(f => f.Price);
+                    break;
+                // Add more cases if needed for other sorting options
+
+                default:
+                    // Default sorting, you can change this as per your requirement
+                    flights = flights.OrderBy(f => f.Price);
+                    break;
+            }
+
+            return View(flights.ToList());
         }
         public IActionResult Create()
         {
@@ -104,5 +122,37 @@ namespace Gbc_Travel_Group63.Controllers
             // Handle the case where the project might not be found
             return NotFound();
         }
+        [HttpGet("Search")]
+        public async Task<IActionResult> SearchF(string departureCity, string arrivalCity, DateTime? departureDate)
+        {
+            var flightsQuery = from f in _db.Flights select f;
+            bool searchPerformed = !string.IsNullOrEmpty(departureCity) || !string.IsNullOrEmpty(arrivalCity) || departureDate.HasValue;
+
+            if (searchPerformed)
+            {
+                if (!string.IsNullOrEmpty(departureCity))
+                {
+                    flightsQuery = flightsQuery.Where(f => f.DepartureCity.Contains(departureCity));
+                }
+
+                if (!string.IsNullOrEmpty(arrivalCity))
+                {
+                    flightsQuery = flightsQuery.Where(f => f.ArrivalCity.Contains(arrivalCity));
+                }
+
+                if (departureDate.HasValue)
+                {
+                    flightsQuery = flightsQuery.Where(f => f.DepartureDate.Date == departureDate.Value.Date);
+                }
+            }
+
+            var matchingFlights = await flightsQuery.ToListAsync();
+
+          
+
+            ViewData["SearchPerformed"] = searchPerformed;
+            return View("SearchF", matchingFlights);
+        }
+
     }
 }

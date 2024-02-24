@@ -8,6 +8,26 @@
 
 @if (Model.Any())
 {
+    <form class="search-form" asp-controller="Car" asp-action="SearchC" method="get">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="Location">Pickup Location</label>
+                    <input type="text" class="form-control" id="pickupLocation" name="pickupLocation" placeholder="Enter pickup location" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="Brand">Brand</label>
+                    <input type="text" class="form-control" id="dropoffLocation" name="Brand" placeholder="Brand" required>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Search Cars</button>
+        </div>
+    </form>
     <table class="table">
         <thead>
             <tr>
@@ -32,7 +52,17 @@
                 <th>
                     @Html.DisplayNameFor(model => model.PricePerDay)
                 </th>
-                <th></th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort by Price
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="@Url.Action("Index", new { sortDirection = "low_to_high" })">Low to High</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", new { sortDirection = "high_to_low" })">High to Low</a>
+                        </div>
+                    </div>
+                </th>
             </tr>
         </thead>
         <tbody>

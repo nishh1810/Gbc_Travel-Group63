@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/SearchC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXFNlYXJjaEMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,8 +62,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/SearchF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xTZWFyY2hGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/CarForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/FlightForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGbGlnaHRGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/HotelForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3RlbEZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Index.cshtml]
@@ -88,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/SearchH.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXFNlYXJjaEguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nishi/source/repos/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/Error.cshtml]
