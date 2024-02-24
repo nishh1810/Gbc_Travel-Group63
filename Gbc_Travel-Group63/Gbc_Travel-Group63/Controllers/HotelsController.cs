@@ -32,6 +32,7 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
+        [HttpGet("Hotels/Edit/{id:int}", Name = "HotelsEdit")]
         public IActionResult Edit(int id)
         {
             var project = _db.Hotels.Find(id);
@@ -41,9 +42,9 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
-        [HttpPost]
+        [HttpPost("Hotels/Edit/{id:int}", Name = "HotelsEdit")]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectId, Name, Description")] Hotel project)
+        public IActionResult Edit(int id, [Bind("HotelId,HotelName,Location,StarRating,PricePerNight,IsPetFriendly,RoomType")] Hotel project)
         {
             if (id != project.HotelId)
             {
@@ -78,7 +79,7 @@ namespace Gbc_Travel_Group63.Controllers
             return _db.Hotels.Any(e => e.HotelId == id);
         }
 
-        [HttpGet]
+        [HttpGet("Hotels/Delete/{id:int}",Name ="HotelsDelete")]
         public IActionResult Delete(int id)
         {
             var project = _db.Hotels.FirstOrDefault(p => p.HotelId == id);
@@ -89,11 +90,11 @@ namespace Gbc_Travel_Group63.Controllers
             return View(project);
         }
 
-        [HttpPost, ActionName("DeleteConfirmed")]
+        [HttpPost("Hotels/DeleteConfirmed/{id:int}", Name ="DeleteConfirmed")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int ProjectId)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var project = _db.Hotels.Find(ProjectId);
+            var project = _db.Hotels.Find(id);
             if (project != null)
             {
                 _db.Hotels.Remove(project);

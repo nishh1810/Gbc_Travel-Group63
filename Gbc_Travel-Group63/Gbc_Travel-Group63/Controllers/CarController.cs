@@ -32,6 +32,7 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
+        [HttpGet("Edit/{id:int}")]
         public IActionResult Edit(int id)
         {
             var project = _db.Cars.Find(id);
@@ -41,9 +42,9 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
-        [HttpPost]
+        [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectId, Name, Description")] Car project)
+        public IActionResult Edit(int id, [Bind("Id,City,CarBrand,CarModel,Year,Color,PricePerDay")] Car project)
         {
             if (id != project.Id)
             {
@@ -78,7 +79,7 @@ namespace Gbc_Travel_Group63.Controllers
             return _db.Cars.Any(e => e.Id == id);
         }
 
-        [HttpGet]
+        [HttpGet("Car/Delete/{id:int}", Name ="CarDelete")]
         public IActionResult Delete(int id)
         {
             var project = _db.Cars.FirstOrDefault(p => p.Id == id);
@@ -89,11 +90,11 @@ namespace Gbc_Travel_Group63.Controllers
             return View(project);
         }
 
-        [HttpPost, ActionName("DeleteConfirmed")]
+        [HttpPost("Car/DeleteConfirmed/{id:int}",Name ="CarDeleteConfirmed")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int ProjectId)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var project = _db.Cars.Find(ProjectId);
+            var project = _db.Cars.Find(id);
             if (project != null)
             {
                 _db.Cars.Remove(project);

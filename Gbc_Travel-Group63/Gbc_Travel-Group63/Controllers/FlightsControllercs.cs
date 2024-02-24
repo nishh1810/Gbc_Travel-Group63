@@ -32,6 +32,11 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(flights);
         }
+        private bool ProjectExists(int id)
+        {
+            return _db.Flights.Any(e => e.FlightNumber == id);
+        }
+        [HttpGet("FlightsControllercs/Edit/{id:int}", Name = "FlightsEdit")]
         public IActionResult Edit(int id)
         {
             var project = _db.Flights.Find(id);
@@ -41,9 +46,9 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
-        [HttpPost]
+        [HttpPost("FlightsControllercs/Edit/{id:int}", Name = "FlightsEdit")]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectId, Name, Description")] Flights project)
+        public IActionResult Edit(int id, [Bind("FlightNumber,DepartureCity,ArrivalCity,DepartureDate,DepartureTime,ArrivalTime,NumberOfPassengers,Price")] Flights project)
         {
             if (id != project.FlightNumber)
             {
@@ -72,13 +77,8 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
-
-        private bool ProjectExists(int id)
-        {
-            return _db.Flights.Any(e => e.FlightNumber == id);
-        }
-
-        [HttpGet]
+        
+        [HttpGet("FlightsControllercs/Delete/{id:int}",Name ="FlightsDelete")]
         public IActionResult Delete(int id)
         {
             var project = _db.Flights.FirstOrDefault(p => p.FlightNumber == id);
@@ -89,11 +89,11 @@ namespace Gbc_Travel_Group63.Controllers
             return View(project);
         }
 
-        [HttpPost, ActionName("DeleteConfirmed")]
+        [HttpPost("FlightsControllercs/DeleteConfirmed/{id:int}",Name ="FlightsDeleConfirmed")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int ProjectId)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var project = _db.Flights.Find(ProjectId);
+            var project = _db.Flights.Find(id);
             if (project != null)
             {
                 _db.Flights.Remove(project);

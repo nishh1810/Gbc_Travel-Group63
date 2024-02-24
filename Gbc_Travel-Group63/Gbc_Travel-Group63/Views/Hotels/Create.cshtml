@@ -15,11 +15,7 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="HotelId" class="control-label"></label>
-                <input asp-for="HotelId" class="form-control" />
-                <span asp-validation-for="HotelId" class="text-danger"></span>
-            </div>
+            
             <div class="form-group">
                 <label asp-for="HotelName" class="control-label"></label>
                 <input asp-for="HotelName" class="form-control" />
@@ -44,8 +40,8 @@
                 <label asp-for="IsPetFriendly" class="control-label"></label>
                 <select asp-for="IsPetFriendly" class="form-control">
                     <option value="">Select</option>
-                    <option value="0">Yes</option>
-                    <option value="1">No</option>
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
                 </select>
                 <span asp-validation-for="IsPetFriendly" class="text-danger"></span>
             </div>
@@ -53,8 +49,8 @@
                 <label asp-for="RoomType" class="control-label"></label>
                 <select asp-for="RoomType" class="form-control">
                     <option value="">Select</option>
-                    <option value="0">Single</option>
-                    <option value="1">Double</option>
+                    <option value="SINGLE">Single</option>
+                    <option value="DOUBLE">Double</option>
                 </select>
                 <span asp-validation-for="RoomType" class="text-danger"></span>
             </div>

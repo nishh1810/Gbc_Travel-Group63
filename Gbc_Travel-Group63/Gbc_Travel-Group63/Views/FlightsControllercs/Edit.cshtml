@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Flights</h4>
+<style>
+    #save{
+        padding-top: 10px;
+    }
+</style>
+<h3>Edit Flights</h3>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-controller="FlightsControllercs" asp-action="Edit" asp-route-FlightNumber="@Model.FlightNumber" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="FlightNumber" />
             <div class="form-group">
@@ -48,14 +50,14 @@
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group"  id="save">
+                <input type="submit" value="Save" class="btn btn-primary" id="save" />
             </div>
-        </form>
+        <</form>
     </div>
 </div>
 
-<div>
+<div id="save">
     <a class="btn btn-primary nav-link text-black" asp-action="Index">Back to List</a>
 </div>
 
