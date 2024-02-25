@@ -1,13 +1,14 @@
-﻿using Gbc_Travel_Group63.Data;
+using Gbc_Travel_Group63.Data;
 using Gbc_Travel_Group63.Models;
 using Microsoft.AspNetCore.Components.QuickGrid;
 using Microsoft.AspNetCore.Mvc;
+using Gbc_Travel_Group63.Models;
+using Gbc_Travel_Group63.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gbc_Travel_Group63.Controllers
 {
     
-
     public class CarController : Controller
     {
         public readonly ApplicationDbContext _db;

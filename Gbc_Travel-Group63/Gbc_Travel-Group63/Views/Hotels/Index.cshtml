@@ -103,6 +103,8 @@
                         <a asp-controller="Hotels" asp-action="Edit" asp-route-id="@item.HotelId" class="btn btn-info">Edit</a> <!-- Link to view project details -->
                         <a asp-action="" asp-route-id="@item.HotelId" class="btn btn-danger">Details</a> <!-- Link to delete a project -->
                         <a asp-controller="Hotels" asp-action="Delete" asp-route-Id="@item.HotelId" class="btn btn-warning">Delete</a>
+                        <a asp-controller="Booking" asp-action="Book" asp-route-bookingType="Hotel" asp-route-itemId="@item.HotelId" class="btn btn-primary">Book</a>
+
                     </td>
                 </tr>
             }

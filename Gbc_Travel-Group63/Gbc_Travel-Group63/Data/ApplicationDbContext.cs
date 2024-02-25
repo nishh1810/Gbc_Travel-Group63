@@ -9,5 +9,7 @@ namespace Gbc_Travel_Group63.Data
         public DbSet<Flights> Flights { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Hotel> Hotels { get; set; }
+
+        public DbSet<Booking> Bookings { get; set; }
     }
 }

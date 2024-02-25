@@ -1,11 +1,13 @@
-﻿using Gbc_Travel_Group63.Data;
+using Gbc_Travel_Group63.Data;
 using Gbc_Travel_Group63.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Gbc_Travel_Group63.Controllers
+public class FlightsControllercs : Controller
 {
-    public class FlightsControllercs : Controller
+    private readonly ApplicationDbContext _context;
+
+    public FlightsControllercs(ApplicationDbContext context)
     {
         public readonly ApplicationDbContext _db;
         public FlightsControllercs(ApplicationDbContext db)
@@ -153,6 +155,14 @@ namespace Gbc_Travel_Group63.Controllers
             ViewData["SearchPerformed"] = searchPerformed;
             return View("SearchF", matchingFlights);
         }
+
+        public IActionResult Book(int id)
+    {
+        var flight = _context.Flights.Find(id);
+
+        // Redirect to the BookingDetails action in the BookingController
+        return RedirectToAction("Book", "Booking", new { bookingType = "Flight", itemId = id });
+    }
 
     }
 }

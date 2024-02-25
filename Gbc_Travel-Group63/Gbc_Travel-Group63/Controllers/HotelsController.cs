@@ -1,4 +1,4 @@
-﻿using Gbc_Travel_Group63.Data;
+using Gbc_Travel_Group63.Data;
 using Gbc_Travel_Group63.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
