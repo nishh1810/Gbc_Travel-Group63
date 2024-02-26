@@ -17,27 +17,28 @@ namespace Gbc_Travel_Group63.Controllers
             _db = db;
         }
         public IActionResult Index(string? sortDirection)
-        {
-            var cars = _db.Cars.AsQueryable();
+{
+    var cars = _db.Cars.AsQueryable();
 
-            switch (sortDirection)
-            {
-                case "low_to_high":
-                    cars = cars.OrderBy(c => c.PricePerDay);
-                    break;
-                case "high_to_low":
-                    cars = cars.OrderByDescending(c => c.PricePerDay);
-                    break;
-                // Add more cases if needed for other sorting options
+    switch (sortDirection)
+    {
+        case "low_to_high":
+            cars = cars.OrderBy(c => (double)c.PricePerDay);
+            break;
+        case "high_to_low":
+            cars = cars.OrderByDescending(c => (double)c.PricePerDay);
+            break;
+        // Add more cases if needed for other sorting options
 
-                default:
-                    // Default sorting, you can change this as per your requirement
-                    cars = cars.OrderBy(c => c.PricePerDay);
-                    break;
-            }
+        default:
+            // Default sorting, you can change this as per your requirement
+            cars = cars.OrderBy(c => (double)c.PricePerDay);
+            break;
+    }
 
-            return View(cars.ToList());
-        }
+    return View(cars.ToList());
+}
+
         public IActionResult Create()
         {
             return View();

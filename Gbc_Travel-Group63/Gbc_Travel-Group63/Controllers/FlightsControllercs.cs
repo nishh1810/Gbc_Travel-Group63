@@ -5,37 +5,34 @@ using Microsoft.EntityFrameworkCore;
 
 public class FlightsControllercs : Controller
 {
-    private readonly ApplicationDbContext _context;
-
-    public FlightsControllercs(ApplicationDbContext context)
-    {
         public readonly ApplicationDbContext _db;
         public FlightsControllercs(ApplicationDbContext db)
         {
             _db = db;
         }
         public IActionResult Index(string? sortDirection)
-        {
-            var flights = _db.Flights.AsQueryable();
+{
+    var flights = _db.Flights.AsQueryable();
 
-            switch (sortDirection)
-            {
-                case "low_to_high":
-                    flights = flights.OrderBy(f => f.Price);
-                    break;
-                case "high_to_low":
-                    flights = flights.OrderByDescending(f => f.Price);
-                    break;
-                // Add more cases if needed for other sorting options
+    switch (sortDirection)
+    {
+        case "low_to_high":
+            flights = flights.ToList().OrderBy(f => f.Price).AsQueryable();
+            break;
+        case "high_to_low":
+            flights = flights.ToList().OrderByDescending(f => f.Price).AsQueryable();
+            break;
+        // Add more cases if needed for other sorting options
 
-                default:
-                    // Default sorting, you can change this as per your requirement
-                    flights = flights.OrderBy(f => f.Price);
-                    break;
-            }
+        default:
+            // Default sorting, you can change this as per your requirement
+            flights = flights.ToList().OrderBy(f => f.Price).AsQueryable();
+            break;
+    }
 
-            return View(flights.ToList());
-        }
+    return View(flights.ToList());
+}
+
         public IActionResult Create()
         {
             return View();
@@ -44,6 +41,8 @@ public class FlightsControllercs : Controller
         [ValidateAntiForgeryToken]
         public IActionResult Create(Flights flights)
         {
+            Random rnd = new Random();
+            flights.FlightNumber = rnd.Next(1, 999999999); 
             if (ModelState.IsValid)
             {
                 _db.Flights.Add(flights);
@@ -158,11 +157,10 @@ public class FlightsControllercs : Controller
 
         public IActionResult Book(int id)
     {
-        var flight = _context.Flights.Find(id);
+        var flight = _db.Flights.Find(id);
 
         // Redirect to the BookingDetails action in the BookingController
         return RedirectToAction("Book", "Booking", new { bookingType = "Flight", itemId = id });
     }
 
-    }
 }

@@ -76,16 +76,8 @@ namespace Gbc_Travel_Group63.Migrations
 
             modelBuilder.Entity("Gbc_Travel_Group63.Models.Flights", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("FlightNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FlightNumber"));
-=======
                     b.Property<string>("FlightNumber")
                         .HasColumnType("TEXT");
->>>>>>> Leo
 
                     b.Property<string>("ArrivalCity")
                         .IsRequired()

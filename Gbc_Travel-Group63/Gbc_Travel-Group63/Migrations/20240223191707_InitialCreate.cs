@@ -33,17 +33,6 @@ namespace Gbc_Travel_Group63.Migrations
                 name: "Flights",
                 columns: table => new
                 {
-<<<<<<< HEAD:Gbc_Travel-Group63/Gbc_Travel-Group63/Migrations/20240221134717_Initial.cs
-                    FlightNumber = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DepartureCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ArrivalCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DepartureDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DepartureTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ArrivalTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NumberOfPassengers = table.Column<int>(type: "int", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-=======
                     FlightNumber = table.Column<string>(type: "TEXT", nullable: false),
                     DepartureCity = table.Column<string>(type: "TEXT", nullable: false),
                     ArrivalCity = table.Column<string>(type: "TEXT", nullable: false),
@@ -52,7 +41,6 @@ namespace Gbc_Travel_Group63.Migrations
                     ArrivalTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     NumberOfPassengers = table.Column<int>(type: "INTEGER", nullable: true),
                     Price = table.Column<decimal>(type: "TEXT", nullable: false)
->>>>>>> Leo:Gbc_Travel-Group63/Gbc_Travel-Group63/Migrations/20240223191707_InitialCreate.cs
                 },
                 constraints: table =>
                 {

@@ -13,27 +13,26 @@ namespace Gbc_Travel_Group63.Controllers
             _db = db;
         }
         public IActionResult Index(string? sortDirection)
-        {
-            var hotels = _db.Hotels.AsQueryable();
+{
+    var hotels = _db.Hotels.AsQueryable();
 
-            switch (sortDirection)
-            {
-                case "low_to_high":
-                    hotels = hotels.OrderBy(h => h.PricePerNight);
-                    break;
-                case "high_to_low":
-                    hotels = hotels.OrderByDescending(h => h.PricePerNight);
-                    break;
-                
+    switch (sortDirection)
+    {
+        case "low_to_high":
+            hotels = hotels.OrderBy(h => (double)h.PricePerNight);
+            break;
+        case "high_to_low":
+            hotels = hotels.OrderByDescending(h => (double)h.PricePerNight);
+            break;
 
-                default:
-                    
-                    hotels = hotels.OrderBy(h => h.PricePerNight);
-                    break;
-            }
+        default:
+            hotels = hotels.OrderBy(h => (double)h.PricePerNight);
+            break;
+    }
 
-            return View(hotels.ToList());
-        }
+    return View(hotels.ToList());
+}
+
         public IActionResult Create()
         {
             return View();
