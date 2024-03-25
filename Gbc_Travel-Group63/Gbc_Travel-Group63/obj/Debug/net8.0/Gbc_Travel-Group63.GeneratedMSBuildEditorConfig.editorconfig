@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Study\COMP2139\Gbc_Travel-Group63\Gbc_Travel-Group63\Gbc_Travel-Group63
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/Signin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxTaWduaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Booking/Book.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
