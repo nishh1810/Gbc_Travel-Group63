@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gbc_Travel-Group63")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a49a1ee316e90c0c0a891725404422728c07e87a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+566fbe142c6ca1ea5b7babca6525a075542cc292")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gbc_Travel-Group63")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gbc_Travel-Group63")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

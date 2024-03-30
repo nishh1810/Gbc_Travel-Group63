@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Gbc_Travel_Group63.Data
 {
-    public class ApplicationDbContext: IdentityDbContext
+    public class ApplicationDbContext: IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Flights> Flights { get; set; }
@@ -13,4 +13,5 @@ namespace Gbc_Travel_Group63.Data
 
         public DbSet<Booking> Bookings { get; set; }
     }
+    
 }
