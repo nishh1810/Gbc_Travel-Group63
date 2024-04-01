@@ -31,13 +31,25 @@ public class AuthorizationController : Controller
     {
         if (ModelState.IsValid)
         {
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+                {
+                if (!await _userManager.IsEmailConfirmedAsync(user))
+                {
+                    // Display error message for unconfirmed email
+                    ModelState.AddModelError(string.Empty, "Your account has not been confirmed yet. Please check your email to confirm your account.");
+                    return View(model);
+                }
+
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            
         }
+        }
+        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
         return View(model);
     }
 
@@ -58,8 +70,10 @@ public class AuthorizationController : Controller
             {
                 System.Diagnostics.Debug.WriteLine("About to send an email to " + model.Email);
                 var email = model.Email;
-                var subject = "Welcome to our application!";
-                var message = "Thank you for registering.";
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var confirmationLink = Url.Action("ConfirmEmail", "Authorization", new { userId = user.Id, token = token }, Request.Scheme);
+                var subject = "Welcome to our application! Confirm an account!";
+                var message = "Thank you for registering." + $"<br>Please confirm your email by clicking <a href='{confirmationLink}'>here</a>.";
                 await _emailSender.SendEmailAsync(email, subject, message);
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("SuccessfulSignUp");
@@ -78,5 +92,33 @@ public class AuthorizationController : Controller
         return View();
     }
 
+    [HttpGet]
+    public async Task<IActionResult> ConfirmEmail(string userId, string token)
+    {
+        if (userId == null || token == null)
+        {
+            return RedirectToAction("Error", "Home");
+        }
+        
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            return RedirectToAction("Error", "Home");
+        }
+
+        var result = await _userManager.ConfirmEmailAsync(user, token);
+        if (result.Succeeded)
+        {
+            return RedirectToAction("EmailConfirmed", "Authorization");
+        }
+        else
+        {
+            // Handle email confirmation failure
+            return RedirectToAction("Error", "Home");
+        }
+    }
     
+    public IActionResult EmailConfirmed(){
+        return View();
+    }
 }

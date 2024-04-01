@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj": {}
+    "E:\\Study\\COMP2139\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj": {}
   },
   "projects": {
-    "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj": {
+    "E:\\Study\\COMP2139\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj",
+        "projectUniqueName": "E:\\Study\\COMP2139\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj",
         "projectName": "Gbc_Travel-Group63",
-        "projectPath": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj",
-        "packagesPath": "/Users/leonidserebryannikov/.nuget/packages/",
-        "outputPath": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/obj/",
+        "projectPath": "E:\\Study\\COMP2139\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj",
+        "packagesPath": "C:\\Users\\warde\\.nuget\\packages\\",
+        "outputPath": "E:\\Study\\COMP2139\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/leonidserebryannikov/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\warde\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
