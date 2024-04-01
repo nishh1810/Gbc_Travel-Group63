@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Gbc_Travel_Group63.Models.Hotel>
-
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewData["Title"] = "Index";
 }
@@ -100,10 +101,12 @@
                         @Html.DisplayFor(modelItem => item.RoomType)
                     </td>
                     <td>
-                        <a asp-controller="Hotels" asp-action="Edit" asp-route-id="@item.HotelId" class="btn btn-info">Edit</a> <!-- Link to view project details -->
                         <a asp-action="" asp-route-id="@item.HotelId" class="btn btn-danger">Details</a> <!-- Link to delete a project -->
-                        <a asp-controller="Hotels" asp-action="Delete" asp-route-Id="@item.HotelId" class="btn btn-warning">Delete</a>
                         <a asp-controller="Booking" asp-action="Book" asp-route-bookingType="Hotel" asp-route-itemId="@item.HotelId" class="btn btn-primary">Book</a>
+                        @if (User.Identity.IsAuthenticated && await UserManager.IsInRoleAsync(await UserManager.FindByEmailAsync(User.Identity.Name), "Admin")){
+                        <a asp-controller="Hotels" asp-action="Delete" asp-route-Id="@item.HotelId" class="btn btn-warning">Delete</a>
+                        <a asp-controller="Hotels" asp-action="Edit" asp-route-id="@item.HotelId" class="btn btn-info">Edit</a> <!-- Link to view project details -->
+                        }
 
                     </td>
                 </tr>
@@ -115,4 +118,7 @@ else
 {
     <p>No Hotels Available</p>
 }
+@if (User.Identity.IsAuthenticated && await UserManager.IsInRoleAsync(await UserManager.FindByEmailAsync(User.Identity.Name), "Admin")){
+
 <p><a class=" btn btn-primary nav-link text-black" asp-area="" asp-controller="Hotels" asp-action="Create">Add a Property</a></p>
+}

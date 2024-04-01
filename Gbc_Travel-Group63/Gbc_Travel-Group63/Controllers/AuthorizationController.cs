@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Gbc_Travel_Group63.Models;
 using Gbc_Travel_Group63.Utils;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 
 public class AuthorizationController : Controller
@@ -12,14 +13,19 @@ public class AuthorizationController : Controller
     private readonly IEmailSender _emailSender;
     private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
+
 
     public AuthorizationController(
         UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager, IEmailSender emailSender)
+        SignInManager<ApplicationUser> signInManager,
+         IEmailSender emailSender,
+        RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _emailSender = emailSender;
+        _roleManager = roleManager;
     }
 
     public IActionResult Signin(){
@@ -60,33 +66,45 @@ public class AuthorizationController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Signup(SignupViewModel model)
+public async Task<IActionResult> Signup(SignupViewModel model)
+{
+    if (ModelState.IsValid)
     {
-        if (ModelState.IsValid)
+        var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+        var result = await _userManager.CreateAsync(user, model.Password);
+        if (result.Succeeded)
         {
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (result.Succeeded)
+            if (model.IsAdmin)
             {
-                System.Diagnostics.Debug.WriteLine("About to send an email to " + model.Email);
-                var email = model.Email;
-                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var confirmationLink = Url.Action("ConfirmEmail", "Authorization", new { userId = user.Id, token = token }, Request.Scheme);
-                var subject = "Welcome to our application! Confirm an account!";
-                var message = "Thank you for registering." + $"<br>Please confirm your email by clicking <a href='{confirmationLink}'>here</a>.";
-                await _emailSender.SendEmailAsync(email, subject, message);
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToAction("SuccessfulSignUp");
+                // Check if admin role exists, if not, create it
+                var adminRoleExists = await _roleManager.RoleExistsAsync("Admin");
+                if (!adminRoleExists)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                }
+                
+                // Assign user to admin role
+                await _userManager.AddToRoleAsync(user, "Admin");
             }
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(string.Empty, error.Description);
-            }
-            
 
+            // Send email confirmation
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var confirmationLink = Url.Action("ConfirmEmail", "Authorization", new { userId = user.Id, token = token }, Request.Scheme);
+            var subject = "Welcome to our application! Confirm your account.";
+            var message = "Thank you for registering. Please confirm your email by clicking <a href='" + confirmationLink + "'>here</a>.";
+            await _emailSender.SendEmailAsync(model.Email, subject, message);
+
+            return RedirectToAction("SuccessfulSignUp");
         }
-        return View(model);
+
+        foreach (var error in result.Errors)
+        {
+            ModelState.AddModelError(string.Empty, error.Description);
+        }
     }
+
+    return View(model);
+}
 
     public IActionResult SuccessfulSignUp(){
         return View();
@@ -121,4 +139,95 @@ public class AuthorizationController : Controller
     public IActionResult EmailConfirmed(){
         return View();
     }
+
+
+    [HttpGet]
+    public IActionResult ForgotPassword()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+            {
+                // Don't reveal that the user does not exist or is not confirmed
+                return RedirectToAction("ForgotPasswordConfirmation");
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var callbackUrl = Url.Action("ResetPassword", "Authorization", new { email = user.Email, token = token }, Request.Scheme);
+
+            // Send reset password email with the reset link
+            await _emailSender.SendEmailAsync(model.Email, "Reset Password", $"Please reset your password by clicking <a href='{callbackUrl}'>here</a>.");
+
+            return RedirectToAction("ForgotPasswordConfirmation");
+        }
+
+        // If model state is invalid, redisplay the form
+        return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult ResetPassword(string token, string email)
+    {
+        if (token == null || email == null)
+        {
+            return RedirectToAction("Error", "Home");
+        }
+
+        var model = new ResetPasswordViewModel { Token = token, Email = email };
+        return View(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (user == null)
+        {
+            // Don't reveal that the user does not exist
+            return RedirectToAction("ResetPasswordConfirmation", "Authorization");
+        }
+        var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+        if (result.Succeeded)
+        {
+            return RedirectToAction("ResetPasswordConfirmation", "Authorization");
+        }
+        foreach (var error in result.Errors)
+        {
+            ModelState.AddModelError(string.Empty, error.Description);
+        }
+        return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult ForgotPasswordConfirmation()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult ResetPasswordConfirmation()
+    {
+        return View();
+    }
+
+    [Authorize]
+    public async Task<IActionResult> Logout()
+    {
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("Index", "Home");
+    }
+
 }

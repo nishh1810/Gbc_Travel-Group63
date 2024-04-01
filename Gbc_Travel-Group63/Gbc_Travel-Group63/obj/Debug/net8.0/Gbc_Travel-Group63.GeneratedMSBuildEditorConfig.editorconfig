@@ -30,6 +30,22 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxFbWFpbENvbmZpcm1lZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/Signin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxTaWduaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
