@@ -70,7 +70,7 @@ public async Task<IActionResult> Signup(SignupViewModel model)
 {
     if (ModelState.IsValid)
     {
-        var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+        var user = new ApplicationUser { UserName = model.Email, Email = model.Email, ContactNumber = "", FullName = "", ProfilePicture = null, Preferences = "" };
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
@@ -229,5 +229,86 @@ public async Task<IActionResult> Signup(SignupViewModel model)
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
+
+
+
+    [Authorize]
+    public async Task<IActionResult> ViewProfile()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        var model = new ProfileViewModel
+        {
+            FullName = user.FullName,
+            ContactNumber = user.ContactNumber,
+            Preferences = user.Preferences
+        };
+
+        return View("ViewProfile", model); // Specify the name of the view
+    }
+
+    [Authorize]
+    public async Task<IActionResult> EditProfile()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        var model = new ProfileViewModel
+        {
+            FullName = user.FullName,
+            ContactNumber = user.ContactNumber,
+            Preferences = user.Preferences
+        };
+
+        return View("UpdateProfile", model);
+    }
+
+
+    
+    [HttpPost]
+    public async Task<IActionResult> UpdateProfile(ProfileViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                user.FullName = model.FullName;
+                user.ContactNumber = model.ContactNumber;
+                user.Preferences = model.Preferences;
+
+                if (model.ProfilePicture != null)
+                {
+                    user.ProfilePicture = model.ProfilePicture;
+                }
+
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    // Profile updated successfully
+                    return RedirectToAction("Index", "Home");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+            else
+            {
+                // User not found
+                return NotFound();
+            }
+        }
+        // If model state is invalid, redisplay the form with validation errors
+        return View("ViewProfile", model);
+    }
+
 
 }
