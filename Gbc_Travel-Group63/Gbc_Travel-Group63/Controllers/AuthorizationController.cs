@@ -70,7 +70,7 @@ public async Task<IActionResult> Signup(SignupViewModel model)
 {
     if (ModelState.IsValid)
     {
-        var user = new ApplicationUser { UserName = model.Email, Email = model.Email, ContactNumber = "", FullName = "", ProfilePicture = null, Preferences = "" };
+        var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {

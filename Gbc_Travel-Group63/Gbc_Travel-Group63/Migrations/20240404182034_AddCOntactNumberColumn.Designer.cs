@@ -3,6 +3,7 @@ using System;
 using Gbc_Travel_Group63.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gbc_Travel_Group63.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240404182034_AddCOntactNumberColumn")]
+    partial class AddCOntactNumberColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
@@ -30,6 +33,7 @@ namespace Gbc_Travel_Group63.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ContactNumber")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -40,6 +44,7 @@ namespace Gbc_Travel_Group63.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
@@ -66,9 +71,11 @@ namespace Gbc_Travel_Group63.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Preferences")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("ProfilePicture")
+                        .IsRequired()
                         .HasColumnType("BLOB");
 
                     b.Property<string>("SecurityStamp")
