@@ -17,127 +17,167 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gbc_Travel_Group63
 build_property.RootNamespace = Gbc_Travel_Group63
-build_property.ProjectDir = E:\Study\COMP2139\Gbc_Travel-Group63\Gbc_Travel-Group63\Gbc_Travel-Group63\
+build_property.ProjectDir = /Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Study\COMP2139\Gbc_Travel-Group63\Gbc_Travel-Group63\Gbc_Travel-Group63
+build_property.MSBuildProjectDirectory = /Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Booking/Book.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29rLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/EmailConfirmed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9FbWFpbENvbmZpcm1lZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Booking/ConfirmBooking.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDb25maXJtQm9va2luZy5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENyZWF0ZS5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9Gb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXERlbGV0ZS5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9SZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEVkaXQuY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9SZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEluZGV4LmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/Signin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9TaWduaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/SearchC.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXFNlYXJjaEMuY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9TaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xDcmVhdGUuY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/SuccessfulSignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9TdWNjZXNzZnVsU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xEZWxldGUuY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/UpdateProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9VcGRhdGVQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xFZGl0LmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Authorization/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yaXphdGlvbi9WaWV3UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xJbmRleC5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Booking/Book.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va2luZy9Cb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/SearchF.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0c0NvbnRyb2xsZXJjc1xTZWFyY2hGLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Booking/ConfirmBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va2luZy9Db25maXJtQm9va2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/About.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/CarForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJGb3JtLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/FlightForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGbGlnaHRGb3JtLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/HotelForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3RlbEZvcm0uY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Car/SearchC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyL1NlYXJjaEMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Listing.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0aW5nLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmxpZ2h0c0NvbnRyb2xsZXJjcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmxpZ2h0c0NvbnRyb2xsZXJjcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXENyZWF0ZS5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmxpZ2h0c0NvbnRyb2xsZXJjcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXERlbGV0ZS5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmxpZ2h0c0NvbnRyb2xsZXJjcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXEVkaXQuY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/FlightsControllercs/SearchF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmxpZ2h0c0NvbnRyb2xsZXJjcy9TZWFyY2hGLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXEluZGV4LmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/SearchH.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxzXFNlYXJjaEguY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/CarForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DYXJGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/FlightForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9GbGlnaHRGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/HotelForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ib3RlbEZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Listing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9MaXN0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/COMP2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-2qunupf3ym
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWxzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWxzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWxzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWxzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Hotels/SearchH.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWxzL1NlYXJjaEguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2e9v837esn
