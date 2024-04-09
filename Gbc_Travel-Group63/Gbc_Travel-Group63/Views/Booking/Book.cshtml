@@ -8,24 +8,10 @@
     <p>Item ID: @Model.ItemId</p>
     <!-- Add other necessary details -->
 
-    <label for="isGuest">I'm a Guest</label>
-    <input type="checkbox" id="isGuest" name="isGuest" onclick="toggleGuest()" asp-for="IsGuest" />
     <div hidden="hidden">
   @Html.EditorFor(model => model.BookingId)
   @Html.EditorFor(model => model.BookingType)
   @Html.EditorFor(model => model.ItemId)
-    </div>
-    <div id="guestDetails">
-        <!-- Display guest details if isGuest is true -->
-        @if (Model.IsGuest)
-        {
-            <p>Is Guest @Model.IsGuest</p>
-        }
-        else
-        {
-            <label for="userID">User ID:</label>
-            <input type="text" id="userID" name="userID" required />
-        }
     </div>
 
     <button type="submit">Submit Booking</button>

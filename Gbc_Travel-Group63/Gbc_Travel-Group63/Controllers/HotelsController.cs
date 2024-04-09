@@ -2,6 +2,7 @@ using Gbc_Travel_Group63.Data;
 using Gbc_Travel_Group63.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Gbc_Travel_Group63.Controllers
 {
@@ -33,10 +34,12 @@ namespace Gbc_Travel_Group63.Controllers
     return View(hotels.ToList());
 }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Hotel project)
@@ -49,6 +52,8 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
+
+        
         [HttpGet("Hotels/Edit/{id:int}", Name = "HotelsEdit")]
         public IActionResult Edit(int id)
         {
@@ -59,6 +64,7 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost("Hotels/Edit/{id:int}", Name = "HotelsEdit")]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("HotelId,HotelName,Location,StarRating,PricePerNight,IsPetFriendly,RoomType")] Hotel project)
@@ -95,7 +101,7 @@ namespace Gbc_Travel_Group63.Controllers
         {
             return _db.Hotels.Any(e => e.HotelId == id);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet("Hotels/Delete/{id:int}",Name ="HotelsDelete")]
         public IActionResult Delete(int id)
         {
@@ -106,7 +112,7 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("Hotels/DeleteConfirmed/{id:int}", Name ="DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)

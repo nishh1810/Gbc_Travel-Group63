@@ -2,15 +2,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Gbc_Travel_Group63.Models;
 using Gbc_Travel_Group63.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using System;
+using System.Linq;
+
 
 public class BookingController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public BookingController(ApplicationDbContext context)
+
+    public BookingController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
     {
         _context = context;
+        _userManager = userManager;
     }
 
     // Action to display booking details
@@ -31,7 +38,7 @@ public class BookingController : Controller
             ItemId = itemId,
             BookingId = rnd.Next(1, 1000000),
             IsGuest = false,
-            UserId = 0
+            UserId = ""
             // Add other necessary properties
         };
 
@@ -52,6 +59,26 @@ public class BookingController : Controller
             // Implement your booking confirmation logic here
             // For example, create a booking record in the database
 
+            viewModel.IsGuest = !User.Identity.IsAuthenticated;
+
+            // If the user is not authenticated, generate a random guest ID
+            if (viewModel.IsGuest)
+            {
+                Random rnd = new Random();
+                viewModel.UserId = "Guest_" + rnd.Next(1, 100000000);
+            }
+            else
+            {
+                // If the user is authenticated, set userId to the actual user ID
+                viewModel.UserId = User.Identity.Name;
+            }
+            var user = _userManager.GetUserAsync(User).Result;
+            if (user != null)
+            {
+                viewModel.UserId = user.Id;
+            }
+            
+
             // Create a new Booking entity
             var newBooking = new Booking
             {
@@ -63,10 +90,7 @@ public class BookingController : Controller
                 // Add other necessary properties
             };
 
-            if(newBooking.IsGuest == true){
-                Random rnd = new Random();
-                newBooking.UserId = rnd.Next(1, 100000000);
-            }
+
 
             Console.WriteLine(newBooking);
 

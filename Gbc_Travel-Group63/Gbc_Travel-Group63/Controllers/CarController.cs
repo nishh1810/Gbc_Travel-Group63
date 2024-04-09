@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Gbc_Travel_Group63.Models;
 using Gbc_Travel_Group63.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Gbc_Travel_Group63.Controllers
 {
@@ -39,10 +40,12 @@ namespace Gbc_Travel_Group63.Controllers
     return View(cars.ToList());
 }
 
+[Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Car project)
@@ -55,6 +58,7 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet("Edit/{id:int}")]
         public IActionResult Edit(int id)
         {
@@ -65,6 +69,7 @@ namespace Gbc_Travel_Group63.Controllers
             }
             return View(project);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("Id,City,CarBrand,CarModel,Year,Color,PricePerDay")] Car project)
@@ -102,6 +107,7 @@ namespace Gbc_Travel_Group63.Controllers
             return _db.Cars.Any(e => e.Id == id);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("Car/Delete/{id:int}", Name ="CarDelete")]
         public IActionResult Delete(int id)
         {
@@ -113,6 +119,7 @@ namespace Gbc_Travel_Group63.Controllers
             return View(project);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("Car/DeleteConfirmed/{id:int}",Name ="CarDeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)

@@ -1,0 +1,32 @@
+@model List<Booking>
+
+<h2>My Bookings</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No bookings found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Booking Type</th>
+                <th>Item ID</th>
+                <!-- Add other booking properties here -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.BookingId</td>
+                    <td>@booking.BookingType</td>
+                    <td>@booking.ItemId</td>
+                    <!-- Add other booking properties here -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
