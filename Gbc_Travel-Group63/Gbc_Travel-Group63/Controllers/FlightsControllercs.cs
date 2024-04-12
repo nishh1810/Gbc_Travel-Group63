@@ -2,6 +2,7 @@ using Gbc_Travel_Group63.Data;
 using Gbc_Travel_Group63.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 public class FlightsControllercs : Controller
 {
@@ -32,11 +33,12 @@ public class FlightsControllercs : Controller
 
     return View(flights.ToList());
 }
-
+[Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Flights flights)
@@ -55,6 +57,7 @@ public class FlightsControllercs : Controller
         {
             return _db.Flights.Any(e => e.FlightNumber == id);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet("FlightsControllercs/Edit/{id:int}", Name = "FlightsEdit")]
         public IActionResult Edit(int id)
         {
@@ -65,6 +68,7 @@ public class FlightsControllercs : Controller
             }
             return View(project);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost("FlightsControllercs/Edit/{id:int}", Name = "FlightsEdit")]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("FlightNumber,DepartureCity,ArrivalCity,DepartureDate,DepartureTime,ArrivalTime,NumberOfPassengers,Price")] Flights project)
@@ -97,6 +101,7 @@ public class FlightsControllercs : Controller
             return View(project);
         }
         
+        [Authorize(Roles = "Admin")]
         [HttpGet("FlightsControllercs/Delete/{id:int}",Name ="FlightsDelete")]
         public IActionResult Delete(int id)
         {
@@ -107,7 +112,7 @@ public class FlightsControllercs : Controller
             }
             return View(project);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("FlightsControllercs/DeleteConfirmed/{id:int}",Name ="FlightsDeleConfirmed")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
