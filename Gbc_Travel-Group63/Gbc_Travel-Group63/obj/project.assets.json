@@ -8664,24 +8664,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/leonidserebryannikov/.nuget/packages/": {}
+    "C:\\Users\\nishi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj",
+      "projectUniqueName": "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63assignment02leo\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj",
       "projectName": "Gbc_Travel-Group63",
-      "projectPath": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63.csproj",
-      "packagesPath": "/Users/leonidserebryannikov/.nuget/packages/",
-      "outputPath": "/Users/leonidserebryannikov/Documents/GitHub/Study/Assignment 1 COMP 2139/Gbc_Travel-Group63/Gbc_Travel-Group63/Gbc_Travel-Group63/obj/",
+      "projectPath": "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63assignment02leo\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\Gbc_Travel-Group63.csproj",
+      "packagesPath": "C:\\Users\\nishi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nishi\\source\\repos\\Gbc_Travel-Group63assignment02leo\\Gbc_Travel-Group63\\Gbc_Travel-Group63\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/leonidserebryannikov/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nishi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8694,6 +8702,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8750,7 +8763,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
